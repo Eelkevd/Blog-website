@@ -14,8 +14,11 @@ function loadBlogPage(){
 function submitBlog(){
 	var blogText = document.getElementById("blogText").value;
 	var userName = document.getElementById("usrInput").value;
-	request.open("POST", "api.php?&key=" + userName + "&message=" + blogText, false);
-	request.send();
+	//request.open("POST", "api.php?&key=" + userName + "&message=" + blogText, false);
+	//request.send();
+	request.open("POST", "api.php", true);
+	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.send("key="+ userName + "&message=" + blogText);
 }
 /*
 function hideAllContent() {
