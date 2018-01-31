@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'GET'){
     $connection = new PDO($dsn, $user_name, $pass_word);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     try{
-    	$sql = 'SELECT ID FROM blog';
+    	$sql = 'SELECT blogText FROM blog';
     	$statement = $connection->query($sql);
     	$result = $statement->fetchall(\PDO::FETCH_ASSOC);
 
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'GET'){
 
     	foreach ($result as $row) {
     		//print $row['']
-    		$ids[] = $row['ID'];
+    		$ids[] = $row['blogText'];
     	}
     	$resultJSON = json_encode($ids);
 

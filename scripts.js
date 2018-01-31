@@ -1,17 +1,13 @@
 var request = new XMLHttpRequest();
 var blogText;
 var userName;
+var oldBlog = [];
 
 function loadBlogForm(){
 	document.getElementById("showBlogPage").style.display = "none";
 	document.getElementById("blogPage").style.display = "block";
 }
 
-/*function loadBlogPage(){
-	document.getElementById("showBlogPage").style.display = "block";
-	document.getElementById("blogPage").style.display = "none";
-}
-*/
 function submitBlog(){
 	var blogText = document.getElementById("blogText").value;
 	var userName = document.getElementById("usrInput").value;
@@ -33,9 +29,20 @@ function getIdsDb(){
 	  success: null
 	});
 */
-	$.get("api.php", function(data, status, request){
-		alert(data);
-		document.getElementById('showBlogText').innerHTML = data;
+	$.get("api.php", function(blogText, status, request){
+		//alert(data);
+
+
+		oldBlog = JSON.parse(blogText);
+		var oldBlogSplit = oldBlog.split(",");
+		alert(oldBlogSplit);
+
+		for (i = 0; i < oldBlog.lenght ; i++) {
+			var newBlog = request.response;
+			document.getElementById('showBlogText').innerHTML = oldBlog[i] + "<br>";
+			//oldMsgs[i] = parseInt(oldMsgs[i]);
+		}
+		
 	})
 	
 	//document.getElementById('showBlogText').innerHTML = blogData;
