@@ -7,11 +7,11 @@ function loadBlogForm(){
 	document.getElementById("blogPage").style.display = "block";
 }
 
-function loadBlogPage(){
+/*function loadBlogPage(){
 	document.getElementById("showBlogPage").style.display = "block";
 	document.getElementById("blogPage").style.display = "none";
 }
-
+*/
 function submitBlog(){
 	var blogText = document.getElementById("blogText").value;
 	var userName = document.getElementById("usrInput").value;
@@ -23,14 +23,27 @@ function submitBlog(){
 }
 
 function getIdsDb(){
-	var surl = "api.php"; 
-	request.open('GET', surl, true);
-	//request.send();
- 	var newblogposts = request.response; //all blog posts from database
+	document.getElementById("showBlogPage").style.display = "block";
+	document.getElementById("blogPage").style.display = "none";
+/*
+	var blogData = $.ajax({
+	  dataType: "json",
+	  url: "api.php",
+	  data: "ID",
+	  success: null
+	});
+*/
+	$.get("api.php", function(data, status, request){
+		alert(data);
+		document.getElementById('showBlogText').innerHTML = data;
+	})
+	
+	//document.getElementById('showBlogText').innerHTML = blogData;
+ 	//var newblogposts = request.response; //all blog posts from database
 	
 	
 	//var blogs_array = JSON.parse(request.response);
-	console.log(newblogposts);
+	//console.log(blogData);
 }
 /*
 function getIdsDb(){
