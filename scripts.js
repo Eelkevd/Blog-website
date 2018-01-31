@@ -6,6 +6,7 @@ function loadBlogForm(){
 	document.getElementById("showBlogPage").style.display = "none";
 	document.getElementById("blogPage").style.display = "block";
 }
+
 function loadBlogPage(){
 	document.getElementById("showBlogPage").style.display = "block";
 	document.getElementById("blogPage").style.display = "none";
@@ -22,48 +23,30 @@ function submitBlog(){
 }
 
 function getIdsDb(){
-
-	//var blogResponse = request.response;
-	//var id = 1;
-	//var url = "api.php?action=read$id="+ id;
-	grabChatMessageId(newMessage);
-
-	var newMessage = request.response;
-	var blogResponse = JSON.parse(newMessage);
-
-		
-		//chatMessage.innerHTML += "> " + mykey + ":" + " " + newMessage + "<br>";
-		//document.getElementById("chatInput").value = "";
-
-	//request.open("GET", url, false);
+	var surl = "api.php"; 
+	request.open('GET', surl, true);
 	//request.send();
-
-	//var blog_array = JSON.parse(this.blogResponse);
-	//var blog_array_lenght = blog_array.length;
-
-	//for(var post in blogs_array){ 
-		document.getElementById("showBlogText").innerHTML = blogResponse;
-	//}
-}
-
-function grabChatMessageId(id){
-	var url = "api.php?action=list$ID="+ id;
-	//var urlRead = "https://codegorilla.nl/read_write/api.php?action=read&mykey=" + myKey + "&id=" + id;
-	request.open('GET', url, false);
-	request.send();
+ 	var newblogposts = request.response; //all blog posts from database
+	
+	
+	//var blogs_array = JSON.parse(request.response);
+	console.log(newblogposts);
 }
 /*
-function hideAllContent() {
-	var contentElements = document.getElementsByClassName("contentElement");
-	for (i = 0; i < contentElements.length; i++) {
-		contentElements[i].style.display = "none";
+function getIdsDb(){
+	request.open("GET", "api.php", false);
+	request.send();
+
+	response = JSON.parse(request.response);
+
+	showBlog(response);
+}
+
+
+function showBlog(content){
+
+	document.getElementById('showBlogText').innerHTML = "";
+	for (i = 0 ; i < content.length ; i++) {
+		document.getElementById('showBlogText').innerHTML += "<div id='blogText'" + content[i][0] + "></div>";
 	}
-}
-
-function navigate(input) {
-	hideAllContent();
-	document.getElementById(input).style.display = "block";
-}
-
-hideAllContent();
-*/
+}*/

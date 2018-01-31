@@ -39,14 +39,14 @@ if ($_SERVER["REQUEST_METHOD"] === 'GET'){
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     try{
     	$sql = 'SELECT ID FROM blog';
-    	$statement = $connection->query($ql);
+    	$statement = $connection->query($sql);
     	$result = $statement->fetchall(\PDO::FETCH_ASSOC);
 
     	$ids = array(); //stored fetched ids
 
     	foreach ($result as $row) {
     		//print $row['']
-    		$ids[] = $row['id'];
+    		$ids[] = $row['ID'];
     	}
     	$resultJSON = json_encode($ids);
 
