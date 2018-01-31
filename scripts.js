@@ -20,6 +20,38 @@ function submitBlog(){
 	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	request.send("key="+ userName + "&message=" + blogText);
 }
+
+function getIdsDb(){
+
+	//var blogResponse = request.response;
+	//var id = 1;
+	//var url = "api.php?action=read$id="+ id;
+	grabChatMessageId(newMessage);
+
+	var newMessage = request.response;
+	var blogResponse = JSON.parse(newMessage);
+
+		
+		//chatMessage.innerHTML += "> " + mykey + ":" + " " + newMessage + "<br>";
+		//document.getElementById("chatInput").value = "";
+
+	//request.open("GET", url, false);
+	//request.send();
+
+	//var blog_array = JSON.parse(this.blogResponse);
+	//var blog_array_lenght = blog_array.length;
+
+	//for(var post in blogs_array){ 
+		document.getElementById("showBlogText").innerHTML = blogResponse;
+	//}
+}
+
+function grabChatMessageId(id){
+	var url = "api.php?action=list$ID="+ id;
+	//var urlRead = "https://codegorilla.nl/read_write/api.php?action=read&mykey=" + myKey + "&id=" + id;
+	request.open('GET', url, false);
+	request.send();
+}
 /*
 function hideAllContent() {
 	var contentElements = document.getElementsByClassName("contentElement");
