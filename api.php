@@ -1,7 +1,8 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $userName = $_POST["key"]; 
+    $titleBlog = $_POST["title"];
+    $selectedCat = $_POST["key"]; 
     $blogText = $_POST["message"];
 
     $dsn = "mysql:dbname=blog;host=127.0.0.1";
@@ -15,10 +16,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	//
 	//echo $connection;
 	try {
-		$sql = "INSERT INTO blog (blogText)" .
-		"VALUES ('$blogText')";
+		$sql = "INSERT INTO blog (title, blogText)" .
+		"VALUES ('$titleBlog', '$blogText')";
+        $connection->exec($sql);
+
+        $sql = "INSERT INTO categories (name)" .
+        "VALUES ('$selectedCat')";
 		$connection->exec($sql);
-		 echo $blogText ."added to database";
+		//echo $blogText ."added to database";
 	}
 	catch(PDOException $e) {
 		echo $sql . $e->getMessage();

@@ -2,13 +2,22 @@ body {
 	background-color: #F4F4E2;
 }
 
+@font-face {
+    font-family: headliner_no._45regular;
+    src: url('font/headlinerno.45_demo-webfont.woff2') format('woff2'),
+         url('font/headlinerno.45_demo-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 #header{
 	margin-bottom: 10px;
-	font-family: Times New Roman;
+	font-family: Courier;
 	font-size: 60px;
 	color: black;
 	padding: 5px;
-	background-color: white;
+
 }
 
 #blogText{
@@ -23,22 +32,35 @@ body {
 	margin-bottom: 10px;
 	overflow-y: scroll;
 	word-wrap: break-word;
-	font-family: Times New Roman;
+	font-family: Courier;
 	padding: 3px;
 }
 
+#positionC{
+	float: left;
+    position: relative;
+    left: 50%;
+}
+
 #showBlogPage, #blogPage{
+	float: left;
+    position: relative;
+    left: -50%;
 	display: none;
 }
 
-#usrInput{
-	margin-top: 20px;
-	margin-bottom: 5px;
+#newPost{
+	margin-top: 15px;
+	padding: 10px;
+	background-color: white;
+}
+
+#usrInput, #selectorCat{
+	margin-bottom: 20px;
 	background-color: white;
 	padding: 5px;
-	width: 80px;
+	width: 400px;
 	display: inline-block;
-	cursor: pointer;
 	font-family: Courier;
 	font-size: 80%;
 	border-bottom: 1px solid ;
@@ -47,26 +69,23 @@ body {
 	border-top: 1px solid ;
 }
 
-#btnBlogInput, #btnShowBlog{
+#btnBlogInput, #btnShowBlog {
 	text-align: center;
-	background-color: white;
+	background-color: #463d3d;
 	padding: 5px;
 	width: 130px;
 	display: inline-block;
 	cursor: pointer;
 	font-family: Courier;
 	font-size: 80%;
-	border-bottom: 1px solid ;
-	border-left: 1px solid ;
-	border-right: 1px solid ;
-	border-top: 1px solid ;
+	color: white;
+	margin-bottom: 30px;
 }
 
 #btnSubBlog {
 	background-color: white;
 	padding: 5px;
 	width: 80px;
-	display: inline-block;
 	cursor: pointer;
 	font-family: Courier;
 	font-size: 80%;
@@ -84,4 +103,23 @@ body {
 	border-left: 1px solid ;
 	border-right: 1px solid ;
 	border-top: 1px solid ;
+	font-family: Courier;
+}
+
+#showBlogPage {
+	border: none;
+	padding: 10px;
+	border-top: 2px solid;
+	border-bottom: 2px solid;
+	background-color: #1D1616;
+}
+
+#btnBlogInput:hover, #btnShowBlog:hover{
+	background-color:white;
+	color: #463d3d;
+}
+
+#btnBlogInput:active, #btnShowBlog:active{
+	background-color:#1D1616;
+	color: white;
 }
