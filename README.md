@@ -5,8 +5,6 @@ Exercise - Create a blogwebsite.
 
 # Changelog
 - Seperated pages for visitors & owner
-Live demo Visitor: http://wijzijncodegorilla.nl/eelkevandijk/blog/visitor/blog.php
-Live demo Owner: http://wijzijncodegorilla.nl/eelkevandijk/blog/owner/blog.php
 - Titles are shown above blogtext 
 - Removed features from visitors webpage
 - Categories are logged into database
@@ -19,6 +17,10 @@ Live demo Owner: http://wijzijncodegorilla.nl/eelkevandijk/blog/owner/blog.php
 
 # Bugs 
 - Styling bugs
+
+# Live demo
+- Live demo Visitor: http://wijzijncodegorilla.nl/eelkevandijk/blog/visitor/blog.php
+- Live demo Owner: http://wijzijncodegorilla.nl/eelkevandijk/blog/owner/blog.php
 
 # SCRUM
 https://trello.com/b/3fzu0kCA/blog-website
