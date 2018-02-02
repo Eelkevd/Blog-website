@@ -8,6 +8,7 @@ Exercise - Create a blogwebsite.
 - Titles are shown above blogtext 
 - Removed features from visitors webpage
 - Categories are logged into database
+- databases are normalised
 - Blogtext is now limited too div
 
 # Upcoming changes
