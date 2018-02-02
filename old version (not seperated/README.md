@@ -1,21 +1,21 @@
 # Blog website
 Create a blogwebsite with backend.
 
-# Version 1.1 (31-01-2018)
+# Version 1.5 (01-02-2018)
 Not fully operational. 
 
 # Changelog
-Backend responsive in HTML
-Input database from HTML fixed
-JSON.parse fixed
+Parse fixed
+2 mysql tables
+send and request into html
+categories input into database
 
 # Issues
-Split the incoming messages from PHP doesnt work
-Just tier 1 is working, no extras
+cannot select from categories
+loading blogs only works on refresh
 
 # Upcoming changes
-Blogs beneath each other
-Extra category option (button, database etc.)
+database tables need to be implemented
 
 # SCRUM 
 https://trello.com/b/3fzu0kCA/blog-website
