@@ -2,9 +2,9 @@
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $titleBlog = $_POST["title"];
-    $catSports = $_POST["cat1"]; 
-    $catNat = $_POST["cat2"]; 
-    $catPol = $_POST["cat3"]; 
+    $catSports = filter_var ($_POST["cat1"], FILTER_VALIDATE_BOOLEAN); 
+    $catNat = filter_var ($_POST["cat2"], FILTER_VALIDATE_BOOLEAN); 
+    $catPol = filter_var ($_POST["cat3"], FILTER_VALIDATE_BOOLEAN); 
     $blogText = $_POST["message"];
 
     $dsn = "mysql:dbname=blog;host=127.0.0.1";
@@ -18,17 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	//
 	//echo $connection;
 
-    if ($catSports == true) {
-        $varSport = "sports";
-    } 
-
-    if ($catNat == true) {
-        $varNat = "nature";
-    } 
-    if ($catPol == true) {
-        $varPol = "politics";
-    }
-
 	try {
 		$sql = "INSERT INTO blog (title, blogText)" .
 		"VALUES ('$titleBlog', '$blogText')";
@@ -41,19 +30,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $last_id = $connection->lastInsertId();
 
         echo $last_id;
+
+        echo $catSports;
+        echo $catNat;
+        echo $catPol;
+
+        if ($catSports) {
+                $varSport = "1";
+
+                $sql = "INSERT INTO blog_categories (category_id, blog_id)" .
+                "VALUES ('$varSport', '$last_id')";
+                $connection->exec($sql);
+
+            } 
+
+        if ($catNat) {
+                $varNat = "2";
+
+                $sql = "INSERT INTO blog_categories (category_id, blog_id)" .
+                "VALUES ('$varNat', '$last_id')";
+                $connection->exec($sql);
+            } 
+
+        if ($catPol) {
+                $varPol = "3";
+
+                $sql = "INSERT INTO blog_categories (category_id, blog_id)" .
+                "VALUES ('$varPol', '$last_id')";
+                $connection->exec($sql);
+            }
+
 		//echo $blogText ."added to database";
-        $sql = "INSERT INTO blog_categories (category_id, blog_id)" .
-        "VALUES ('$varSport', '$last_id')";
-        $connection->exec($sql);
-
-        $sql = "INSERT INTO blog_categories (category_id, blog_id)" .
-        "VALUES ('$varNat', '$last_id')";
-        $connection->exec($sql);
-
-        $sql = "INSERT INTO blog_categories (category_id, blog_id)" .
-        "VALUES ('$varPol', '$last_id')";
-        $connection->exec($sql);
-
 	}
 	catch(PDOException $e) {
 		echo $sql . $e->getMessage();
@@ -73,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'GET'){
     $connection = new PDO($dsn, $user_name, $pass_word);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     try{
-    	$sql = 'SELECT title, blogText FROM blog';
+    	$sql = 'SELECT * FROM blog';
     	$statement = $connection->query($sql);
     	$result = $statement->fetchall(\PDO::FETCH_ASSOC);
 

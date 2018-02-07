@@ -2,6 +2,7 @@ var request = new XMLHttpRequest();
 var blogText;
 var userName;
 var selectedCat;
+//var articleID;
 var oldBlog = []; //array for blogtext values from database
 
 shortcuts = { 
@@ -22,10 +23,13 @@ window.onload = function() {
 	
 	oldBlog = JSON.parse(request.response);
 	oldBlog.reverse();
-	//alert(request.response);
+
 	oldBlog.forEach(function(element){
-			//alert(element);
-			document.getElementById('showBlogText').innerHTML += "<div id='newPost'>" + "<b>" + element.title + "</b>" + "<br>" + "<br>" + element.blogText + "</div>" + "<br>";
+			var articleID = element.ID;
+			//alert(articleID);
+			// load old blogs
+			document.getElementById('showBlogText').innerHTML += "<div id='newPost'>" + "<b>" + element.title + "</b>" + "<br>" + "<br>" + element.blogText + "</div>" + "<br>" + "<a href='commentsection.php?blogid=" + articleID + "'>comments" + "</a>";
+
 	});
 
 	// needed for shortcut function
