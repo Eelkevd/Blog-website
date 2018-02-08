@@ -51,7 +51,13 @@ body {
 
 #newPost{
 	margin-top: 15px;
-	padding: 50px;
+	padding: 35px;
+	background-color: white;
+}
+
+#newComm{
+	margin-top: 3px;
+	padding: 10px;
 	background-color: white;
 }
 
@@ -107,7 +113,8 @@ body {
 }
 
 #categoryBoxes{
-	color: white;
+	color: #463d3d;
+	font-family: Courier;
 }
 
 #showBlogPage {
@@ -125,5 +132,9 @@ body {
 
 #btnBlogInput:active, #btnShowBlog:active{
 	background-color:#1D1616;
+	color: white;
+}
+
+#headerCat{
 	color: white;
 }

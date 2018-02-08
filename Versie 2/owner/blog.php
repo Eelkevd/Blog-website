@@ -29,19 +29,20 @@
 					 <div id="btnSubBlog" onclick="submitBlog()" align="center">Submit</div>
 				</div>
 				<div id="showBlogPage">
-					<div id="categoryBoxes">
-						<input type="checkbox" id="sportsCheckB" name="subscribe" value="sports">
-	    				<label for="subscribeNews">Sports</label>
-	    				<input type="checkbox" id="natureCheckB" name="subscribe" value="nature">
-	    				<label for="subscribeNews">Nature</label>
-	    				<input type="checkbox" id="politicsCheckB" name="subscribe" value="politics">
-	    				<label for="subscribeNews">Politics</label>
-					</div>
+						<section id="categories-content">
+							<h3 id="headerCat">Categories</h3>
+							<div class="category-element">
+								<select id="categories">
+								  <option value="sports">Sports</option>
+								  <option value="nature">Nature</option>
+								  <option value="politics">Politics</option>
+								</select>
+								<button id = "send" onclick="getBlogpost(); return false;">Send</button>
+							</div>
+						</section>
+					
 					<div id="showBlogText"></div>
 					<div id="oldComm"></div>
-					<div id="newComm">
-						<textarea name="comment" form="commenttext" id="commentBody" placeholder="Leave a comment"></textarea>
-					</div>
 				</div>
 			</div>
 		</div>
