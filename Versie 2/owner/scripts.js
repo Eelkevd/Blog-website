@@ -41,7 +41,7 @@
 					var k = returnComm[j];
 
 					if (k[2] == b[0]) {
-			   		document.getElementById("showBlogText").innerHTML += "<div id='newCommHeader'>" + "Comments" + "</div>" + "<div id='newComm'>" + "Anomynous:" + " " + k[1] + "</div>";
+			   		document.getElementById("showBlogText").innerHTML +=  "<div id='newComm'>" + "Anomynous:" + " " + k[1]  + "<form action='delete-api.php?commentid=" + k[0] + "' method='post'>" + "<input type='submit' value='Delete'>" + "</form>" + "</div>" + "<br>";
 					}
 		  		}
 		  	}
