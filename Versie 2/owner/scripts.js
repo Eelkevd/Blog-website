@@ -2,7 +2,6 @@
 	var blogText;
 	var userName;
 	var selectedCat;
-	//var articleID;
 	var oldBlog = []; //array for blogtext values from database
 
 	shortcuts = { 
@@ -33,8 +32,7 @@
 
 			for (var i = 0 ; i < oldBlog.length ; i++) {
 				var b = oldBlog[i];
-				//console.log(b);
-				document.getElementById('showBlogText').innerHTML += "<div id='newPost'>" + "<b>" + b[1] + "</b>" + "<br>" + "<br>" + b[2] + "</div>" + "<br>" + "<a href='commentsection.php?blogid=" + b[0] + "'> Post your own comment" + "</a>";
+				document.getElementById('showBlogText').innerHTML += "<div id='newPost'>" + "<b>" + b[1] + "</b>" + "<br>" + "<br>" + b[3 ] + "</div>" + "<br>" + "<a href='commentsection.php?blogid=" + b[0] + "'> Post your own comment" + "</a>";
 
 				for(var j = 0; j < returnComm.length; j++){ 
 
@@ -84,7 +82,6 @@
 		var blogText = document.getElementById("blogText").value;
 
 		if (titleBlog != "" && blogText != "") {
-			//alert(selectedCat);
 
 			request.open("POST", "api.php", true);
 			request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -95,7 +92,7 @@
 		}
 	}
 
-	function getBlogpost() {
+	function getBlogpost() {// returns all the blogs that have been posted
 	    	var blogcategories = document.getElementById("categories").value;
 	    	var blogScreen = document.getElementById("showBlogText");
 
@@ -105,25 +102,20 @@
 			returnblog = JSON.parse(request.response);
 			returnblog.reverse();
 
-
-
-			//returnblog.reverse();
-			//alert(returnblog);
-
 			jQuery('#showBlogText').html('');
 
-			for (var i = 0 ; i < returnblog.length ; i++) {
+			for (var i = 0 ; i < returnblog.length ; i++) {// loops through the blog id's, titles and blog texts
 				var b = returnblog[i];
-				//console.log(b);
 				if (blogcategories == b[2]) {
 
 	   			document.getElementById("showBlogText").innerHTML += "<div id='newPost'>" + "<b>" + b[1] + "</b>" + "<br>" + "<br>" + b[3] + "</div>" + "<br>" + "<a href='commentsection.php?blogid=" + b[0] + "'>comments" + "</a>";
-	   			for(var j = 0; j < returnComm.length; j++){ 
+	   			
+	   			for(var j = 0; j < returnComm.length; j++){ // loops through comments
 
 					var k = returnComm[j];
 
 					if (k[2] == b[0]) {
-			   		document.getElementById("showBlogText").innerHTML += "<div id='newComm'>" + "Anomynous:" + " " + k[1] + "</div>";
+			   		document.getElementById("showBlogText").innerHTML += "<div id='newComm'>" + "Anomynous:" + " " + k[1]  + "<form action='delete-api.php?commentid=" + k[0] + "' method='post'>" + "<input type='submit' value='Delete'>" + "</form>" + "</div>" + "<br>";
 					}
 		  		}
 	   		}

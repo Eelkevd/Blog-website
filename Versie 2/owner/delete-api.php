@@ -1,5 +1,7 @@
 <?php
 
+//php for deleting comments, only blogger/owner has this permission
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $commentId = $_GET["commentid"];
 
@@ -7,20 +9,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_name = "root";
     $pass_word = "";
 
-    //$connection = new mysqli("localhost","root", "", "blog");
     $connection = new PDO($dsn, $user_name, $pass_word);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	//$content = $userName ." ". $blogText;
-	//
-	//echo $connection;
 
 	try {
 
 		$sql = "DELETE FROM comments WHERE id=$commentId";
 
-	    // use exec() because no results are returned
 	    $connection->exec($sql);
-	    //echo "Record deleted successfully";
 	    echo "<script> window.history.go(-1); </script>";
 
 	}
@@ -33,6 +29,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$previous = $_SERVER['HTTP_REFERER'];
 	}
 }
-
 
 ?>

@@ -1,6 +1,8 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+// posts and retrieves blogs 
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
     $titleBlog = $_POST["title"];
     $catSports = filter_var ($_POST["cat1"], FILTER_VALIDATE_BOOLEAN); 
     $catNat = filter_var ($_POST["cat2"], FILTER_VALIDATE_BOOLEAN); 
@@ -11,29 +13,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_name = "root";
     $pass_word = "";
 
-    //$connection = new mysqli("localhost","root", "", "blog");
     $connection = new PDO($dsn, $user_name, $pass_word);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	//$content = $userName ." ". $blogText;
-	//
-	//echo $connection;
 
 	try {
 		$sql = "INSERT INTO blog (title, blogText)" .
 		"VALUES ('$titleBlog', '$blogText')";
         $connection->exec($sql);
 
-        /*$sql = "INSERT INTO categories (name)" .
-        "VALUES ('$selectedCat')";
-		$connection->exec($sql);*/
-
         $last_id = $connection->lastInsertId();
-
-        echo $last_id;
-
-        echo $catSports;
-        echo $catNat;
-        echo $catPol;
 
         if ($catSports) {
                 $varSport = "1";
@@ -58,8 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "VALUES ('$varPol', '$last_id')";
                 $connection->exec($sql);
             }
-
-		//echo $blogText ."added to database";
 	}
 	catch(PDOException $e) {
 		echo $sql . $e->getMessage();
@@ -72,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 header("Content-Type:application/json");
+
 $verb = $_SERVER['REQUEST_METHOD'];
     if ($verb == 'GET') {
         if (isset($_GET )) {
@@ -104,4 +91,5 @@ $verb = $_SERVER['REQUEST_METHOD'];
     return $json_answer;
     $connection = null;
 }
+
 ?>

@@ -8,7 +8,6 @@ body {
          url('font/headlinerno.45_demo-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 #header{
@@ -17,7 +16,6 @@ body {
 	font-size: 60px;
 	color: black;
 	padding: 5px;
-
 }
 
 #blogText{

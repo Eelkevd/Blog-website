@@ -1,6 +1,9 @@
 <?php
 
+// php for selecting post by category
+
 header("Content-Type:application/json");
+
 $verb = $_SERVER['REQUEST_METHOD'];
 	if ($verb == 'GET') {
 		if (isset($_GET )) {
@@ -8,7 +11,6 @@ $verb = $_SERVER['REQUEST_METHOD'];
 			echo $json_response;
 		} else {
 			http_response_code(200);
-			
 		}
 	}
 
@@ -28,7 +30,7 @@ $verb = $_SERVER['REQUEST_METHOD'];
 	foreach ($result as $row) {
 		$answer[] = array($row['ID'], $row['title'], $row['name'], $row['blogText']);
 	}
-	//echo $answer;
+
 	$json_answer = json_encode($answer);
 	return $json_answer;
 	$connection = null;
