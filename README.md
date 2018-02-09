@@ -3,6 +3,12 @@ Exercise - Create a blogwebsite.
 
 # Version 2 (9-2-2018) (this readme is about version 2, see version 2 map)
 
+# !! SHORTCUTS
+The owner (blogger) can type in shortcuts. As of now they are the following:
+- cg : CodeGorilla,
+- gn : Groningen,
+- www : world wide web
+
 # Changelog
 - Seperated pages for visitors & owner
 - Titles are shown above blogtext 
@@ -30,3 +36,10 @@ Exercise - Create a blogwebsite.
 
 # SCRUM
 https://trello.com/b/3fzu0kCA/blog-website
+
+# For next time;
+- order files (css in css map, php's in php map)
+- better naming of database tables an
+
+# Swagger 
+https://app.swaggerhub.com/apis/Eelke-Codegorilla/API-Eelke-4.0/1.0.0
