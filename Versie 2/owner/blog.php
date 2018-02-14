@@ -28,7 +28,12 @@
 					 <textarea name="comment" form="blogInput" id="blogText" placeholder="Type your article"></textarea>
 					 <div id="btnSubBlog" onclick="submitBlog()" align="center">Submit</div>
 				</div>
+
 				<div id="showBlogPage">
+					<div>
+						<input type="text" name="searchQ" placeholder="search.." id="searchInput"> <br />
+						<div id="btnSubSearch" onclick="searchBlog()"/>Search</div>
+					</div>
 						<section id="categories-content">
 							<h3 id="headerCat">Categories</h3>
 							<div class="category-element">
@@ -39,8 +44,7 @@
 								</select>
 								<button id = "send" onclick="getBlogpost(); return false;">Send</button>
 							</div>
-						</section>
-					
+						</section>	
 					<div id="showBlogText"></div>
 					<div id="oldComm"></div>
 				</div>

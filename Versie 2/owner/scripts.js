@@ -108,17 +108,41 @@
 				var b = returnblog[i];
 				if (blogcategories == b[2]) {
 
-	   			document.getElementById("showBlogText").innerHTML += "<div id='newPost'>" + "<b>" + b[1] + "</b>" + "<br>" + "<br>" + b[3] + "</div>" + "<br>" + "<a href='commentsection.php?blogid=" + b[0] + "'>comments" + "</a>";
-	   			
-	   			for(var j = 0; j < returnComm.length; j++){ // loops through comments
+		   			document.getElementById("showBlogText").innerHTML += "<div id='newPost'>" + "<b>" + b[1] + "</b>" + "<br>" + "<br>" + b[3] + "<br>" + "<br>" + "<form action='editblog.php?blogtext=" + b[2] + "&blogid=" + b[0] + "' method='post'>" + "<input type='submit' value='Edit'>" + "</form>" + "</div>" + "<br>" + "</div>" + "<a href='commentsection.php?blogid=" + b[0] + "'>comments" + "</a>";
+		   			
+		   			for(var j = 0; j < returnComm.length; j++){ // loops through comments
 
-					var k = returnComm[j];
+						var k = returnComm[j];
 
-					if (k[2] == b[0]) {
-			   		document.getElementById("showBlogText").innerHTML += "<div id='newComm'>" + "Anomynous:" + " " + k[1]  + "<form action='delete-api.php?commentid=" + k[0] + "' method='post'>" + "<input type='submit' value='Delete'>" + "</form>" + "</div>" + "<br>";
-					}
-		  		}
-	   		}
+						if (k[2] == b[0]) {
+				   			document.getElementById("showBlogText").innerHTML += "<div id='newComm'>" + "Anomynous:" + " " + k[1]  + "<form action='delete-api.php?commentid=" + k[0] + "' method='post'>" + "<input type='submit' value='Delete'>" + "</form>" + "</div>" + "<br>";
+						}
+			  		}
+	   			}
+			}
 		}
+
+	function searchBlog() {
+
+		jQuery('#showBlogText').html('');
+
+		var searchVal = document.getElementById("searchInput").value;
+		var url = "search-api.php?search="+ searchVal;
+
+		request.open("GET", url, true);
+		request.send();
+
+		var searchRes = request.response;
+
+		request.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("showBlogText").innerHTML =
+            this.response;
+	       }
+	    };
+
+		//console.log(searchRes);
+		//document.getElementById('showBlogText').innerHTML += searchRes;
+		//searchRes.reverse();
 	}
 

@@ -40,11 +40,15 @@ body {
     left: 50%;
 }
 
-#showBlogPage, #blogPage{
+#showBlogPage, #blogPage, #blogEditPage{
 	float: left;
     position: relative;
     left: -50%;
 	display: none;
+}
+
+#blogEditPage {
+	display: block;
 }
 
 #newPost{
@@ -86,7 +90,7 @@ body {
 	margin-bottom: 30px;
 }
 
-#btnSubBlog {
+#btnSubBlog, #btnSearchBlog {
 	background-color: white;
 	padding: 5px;
 	width: 80px;
