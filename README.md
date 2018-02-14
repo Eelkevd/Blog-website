@@ -2,6 +2,7 @@
 Exercise - Create a blogwebsite. 
 
 # Version 2 (9-2-2018) (this readme is about version 2, see version 2 map)
+- IMPORTANT: blogs load only after refreshing of the webpage
 
 # !! SHORTCUTS
 The owner (blogger) can type in shortcuts. As of now they are the following:
@@ -24,6 +25,7 @@ The owner (blogger) can type in shortcuts. As of now they are the following:
 - show comments
 - delete comments
 - select categories
+- cleaned up the code
 
 # Upcoming changes
 - styling changes
