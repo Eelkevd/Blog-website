@@ -58,9 +58,38 @@ body {
 }
 
 #newComm{
-	margin-top: 1px;
+	margin-bottom: -17px;
 	padding: 10px;
 	background-color: white;
+	font-size: 85%;
+}
+
+#separateBlog {
+	width: 100%;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	display: inline-block;
+
+    height: 1px;
+    border: 0;
+    border-top: 1px dashed #ccc;
+    padding: 0;
+}
+
+a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    width: 100%;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+a:hover, a:active {
+    background-color: red;
 }
 
 #usrInput, #selectorCat{
@@ -136,7 +165,6 @@ body {
 	background-color:#1D1616;
 	color: white;
 }
-
-#headerCat{
+.header3{
 	color: white;
 }

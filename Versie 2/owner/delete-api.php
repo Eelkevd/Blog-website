@@ -5,9 +5,7 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $commentId = $_GET["commentid"];
 
-    $dsn = "mysql:dbname=blog;host=127.0.0.1";
-    $user_name = "root";
-    $pass_word = "";
+    include 'configPDO.php';
 
     $connection = new PDO($dsn, $user_name, $pass_word);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

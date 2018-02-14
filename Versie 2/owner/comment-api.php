@@ -15,15 +15,11 @@ $verb = $_SERVER['REQUEST_METHOD'];
 	}
 
 	function returnBlogposts () {
-	$host = "127.0.0.1";
-	$user = "root";
-	$pass = "";
-	$db = "blog";
+
+	include "configMSQLI.php";
 
 	$connection = mysqli_connect($host, $user, $pass, $db);
-
 	$sql = "SELECT * FROM comments";
-	
 	$result = $connection->query($sql);
 
 	$answer = array();

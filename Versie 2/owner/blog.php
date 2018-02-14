@@ -9,12 +9,15 @@
 
 	<body>
 		<header id="header" align="center"><b>Ye old Blog</b></header>
+
 		<div id="btnGrp" align="center">
 			<div id="btnBlogInput" onclick="loadBlogForm()">write blog</div>
 			<div id="btnShowBlog" onclick="getOldBlog()">show blogs</div>
 		</div>
+
 		<div class="contentElement">
 			<div id="positionC">
+
 				<div id="blogPage">
 					 <input type="text" name="usrname" placeholder="title" id="usrInput"> <br />
 					 <div id="categoryBoxes">
@@ -31,25 +34,25 @@
 
 				<div id="showBlogPage">
 					<div>
-						<input type="text" name="searchQ" placeholder="search.." id="searchInput"> <br />
-						<div id="btnSubSearch" onclick="searchBlog()"/>Search</div>
+						<h3 class="header3">Search blogs</h3>
+						<input type="text" name="searchQ" placeholder="search.." id="searchInput">
+						<button id = "send" onclick="searchBlog(); return false;">Send</button>
 					</div>
 						<section id="categories-content">
-							<h3 id="headerCat">Categories</h3>
+							<h3 class="header3">Categories</h3>
 							<div class="category-element">
 								<select id="categories">
-								  <option value="sports">Sports</option>
-								  <option value="nature">Nature</option>
-								  <option value="politics">Politics</option>
+									<option value="all">All</option>
+									<option value="sports">Sports</option>
+									<option value="nature">Nature</option>
+								 	<option value="politics">Politics</option>
 								</select>
 								<button id = "send" onclick="getBlogpost(); return false;">Send</button>
 							</div>
 						</section>	
 					<div id="showBlogText"></div>
-					<div id="oldComm"></div>
 				</div>
 			</div>
 		</div>
 	</body>
-
 </html>

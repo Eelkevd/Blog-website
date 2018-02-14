@@ -6,9 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     $search = $_GET["search"];
 
-    $dsn = "mysql:dbname=blog;host=127.0.0.1";
-    $user_name = "root";
-    $pass_word = "";
+    include 'configPDO.php';
 
     $connection = new PDO($dsn, $user_name, $pass_word);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -24,15 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 			echo "<div id='newPost'>", "<b>", $row['title'], "</b>", "<br />", $row['blogText'], "<br />", "</div>";
 		}
 
-		//$json_answer = json_encode($answer);
-		//return $json_answer;
 		$connection = null;
-	    //$answer = array();
-		//foreach ($result as $row) {
-		//	$answer[] = array($row['id'], $row['comment'], $row['blog_id']);
-		//}
-		
-	    //	echo $result;
 
 	}
 	catch(PDOException $e) {

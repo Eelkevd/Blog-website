@@ -9,9 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $catPol = filter_var ($_POST["cat3"], FILTER_VALIDATE_BOOLEAN); 
     $blogText = $_POST["message"];
 
-    $dsn = "mysql:dbname=blog;host=127.0.0.1";
-    $user_name = "root";
-    $pass_word = "";
+    include 'configPDO.php';
 
     $connection = new PDO($dsn, $user_name, $pass_word);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -71,10 +69,8 @@ $verb = $_SERVER['REQUEST_METHOD'];
     }
 
     function returnBlogposts () {
-    $host = "127.0.0.1";
-    $user = "root";
-    $pass = "";
-    $db = "blog";
+    
+    include "configMSQLI.php";
 
     $connection = mysqli_connect($host, $user, $pass, $db);
 

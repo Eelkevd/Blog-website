@@ -14,13 +14,8 @@
 					<form action="editblog-api.php" method="post">
 						<textarea name="blogtext" id="blogText"><?php 
 
-							$host = "127.0.0.1";
-						    $user = "root";
-						    $pass = "";
-						    $db = "blog";
+							include "configMSQLI.php";
 						    $blog_id = $_GET['blogid'];
-
-						    //echo $blog_id;
 
 						    $connection = mysqli_connect($host, $user, $pass, $db);
 

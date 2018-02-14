@@ -15,11 +15,9 @@ $verb = $_SERVER['REQUEST_METHOD'];
 	}
 
 	function returnBlogposts () {
-	$host = "127.0.0.1";
-	$user = "root";
-	$pass = "";
-	$db = "blog";
-
+	
+	include "configMSQLI.php";
+	
 	$connection = mysqli_connect($host, $user, $pass, $db);
 
 	$sql = "SELECT blog.ID, blog.title, categories.name, blog.blogText FROM categories INNER JOIN blog_categories ON categories.id = blog_categories.category_id INNER JOIN blog ON blog_categories.blog_id = blog.ID";
