@@ -4,7 +4,8 @@ session_start();
 
 if (isset($_POST['submit'])) {
 	if (empty($_POST['username']) || empty($_POST['password'])) {
-		$error = "Username or password is invalid :(";
+		echo "<script type='text/javascript'>alert('Please fill in a username and a password');</script>"; 
+		echo "<script> window.history.go(-1); </script>";
 	}
 	else {
 		$username = $_POST['username'];
@@ -17,20 +18,21 @@ if (isset($_POST['submit'])) {
 		$connection = mysqli_connect($host, $user, $pass, $db);
 
 		$sql = "SELECT * FROM loginadmin WHERE username = '$username' AND password = '$password'";
-		$result = msqli_query($connection, $sql);
-		$rows = msqli_num_rows($result);
+		$result = mysqli_query($connection, $sql);
+		$rows = mysqli_num_rows($result);
 
 		//$result = $connection->query($sql);
 
 		if ($rows == 1) {
-			session_start();
+			//session_start();
 			$_SESSION['username'] = $username;
 			header("location:blog.php");
 		}
 		else {
-			echo "wrong username or password";
+			echo "<script type='text/javascript'>alert('The username and/or password is not correct');</script>"; 
+			echo "<script> window.history.go(-1); </script>";
 		}
-		mysql_close($connection); // Closing Connection
+		mysqli_close($connection); // Close Connection
 	}
 }
 

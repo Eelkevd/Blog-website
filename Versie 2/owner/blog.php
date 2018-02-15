@@ -1,3 +1,8 @@
+<?php
+	include "session.php";
+	session_status ();
+?>
+
 <!doctype html>
 <html>
 	<head>
@@ -9,6 +14,7 @@
 
 	<body>
 		<header id="header" align="center"><b>Ye old Blog</b></header>
+		<p id="welcomeUser" align="center">Welcome: <?php echo $login_session; ?></p>
 
 		<div id="btnGrp" align="center">
 			<div id="btnBlogInput" onclick="loadBlogForm()">write blog</div>

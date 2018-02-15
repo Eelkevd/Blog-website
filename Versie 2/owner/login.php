@@ -29,3 +29,15 @@
 		</div>
 	</body>
 </html>
+
+<script>
+
+$(document).ready(function(){ //keypress function, when enter is pressed; button is activated
+	
+	$('#myKey').keypress(function(e){
+		if(e.keyCode==13) // 13 = enter
+		$('#loginConfirm').click(); // id for div or button
+	});
+});
+
+</script>

@@ -18,6 +18,15 @@ body {
 	padding: 5px;
 }
 
+#welcomeUser{
+	margin-bottom: 5px;
+	margin-top: -5px;
+	font-family: Courier;
+	font-size: 30px;
+	color: black;
+	padding: 5px;
+}
+
 #blogText{
 	height: 400px;
 	max-height: 800px;
