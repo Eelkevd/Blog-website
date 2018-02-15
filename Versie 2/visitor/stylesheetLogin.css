@@ -1,0 +1,57 @@
+body {
+	background-color: #F4F4E2;
+}
+
+#header{
+	margin-bottom: 10px;
+	font-family: Courier;
+	font-size: 60px;
+	color: black;
+	padding: 5px;
+}
+
+#regConfirm{
+	
+}
+
+#loginConfirm, #regConfirm, #cancelReg {
+	margin-top: 7px;
+	background-color: white;
+	padding: 5px;
+	width: 80px;
+	display: inline-block;
+	cursor: pointer;
+	font-family: Courier;
+	font-size: 80%;
+}
+
+#header3{
+	font-family: Courier;
+}
+
+#loginWrap{
+	font-family: Courier;
+	font-size: 90%;
+}
+
+#userName, #password, #regUsername, #regPassword, #regEmail{
+	font-family: Courier;
+	margin-top: 5px;
+}
+
+#btnBlogInput, #btnShowBlog {
+	text-align: center;
+	background-color: #463d3d;
+	padding: 5px;
+	width: 160px;
+	display: inline-block;
+	cursor: pointer;
+	font-family: Courier;
+	font-size: 80%;
+	color: white;
+	margin-bottom: 30px;
+}
+
+#regNew{
+	display: none;
+}

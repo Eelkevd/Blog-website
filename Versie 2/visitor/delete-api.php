@@ -1,22 +1,22 @@
 <?php
 
-// php for posting comments 
+//php for deleting comments, only blogger/owner has this permission
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $blog_id = $_POST["blogid"];
-    $blog_comment = $_POST["comment"];
+    $commentId = $_GET["commentid"];
 
     include 'configPDO.php';
-    
+
     $connection = new PDO($dsn, $user_name, $pass_word);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	try {
 
-        $sql = "INSERT INTO comments (comment, blog_id) VALUES ('$blog_comment', $blog_id)";
-        $connection->exec($sql);
-            
-        echo "<script> window.history.go(-2); </script>";
+		$sql = "DELETE FROM comments WHERE id=$commentId";
+
+	    $connection->exec($sql);
+	    echo "<script> window.history.go(-1); </script>";
+
 	}
 	catch(PDOException $e) {
 		echo $sql . $e->getMessage();

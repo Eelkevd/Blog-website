@@ -15,23 +15,18 @@ $verb = $_SERVER['REQUEST_METHOD'];
 	}
 
 	function returnBlogposts () {
-	$host = "127.0.0.1";
-	$user = "root";
-	$pass = "";
-	$db = "blog";
+
+	include "configMSQLI.php";
 
 	$connection = mysqli_connect($host, $user, $pass, $db);
-
 	$sql = "SELECT * FROM comments";
-	
 	$result = $connection->query($sql);
 
 	$answer = array();
-
 	foreach ($result as $row) {
 		$answer[] = array($row['id'], $row['comment'], $row['blog_id']);
 	}
-
+	
 	$json_answer = json_encode($answer);
 	return $json_answer;
 	$connection = null;

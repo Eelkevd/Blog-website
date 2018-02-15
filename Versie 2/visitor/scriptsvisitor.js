@@ -1,6 +1,6 @@
-	var request = new XMLHttpRequest();
+ 	var request = new XMLHttpRequest();
 	var blogText;
-	var userName;
+	 var userName;
 	var selectedCat;
 	var oldBlog = []; //array for blogtext values from database
 
@@ -11,6 +11,7 @@
 	    "cg" : "CodeGorilla",
 	    "gn" : "Groningen",
 	    "www" : "world wide web" // <- last one doesn't need to end with a comma
+
 		}
 
 	window.onload = function() {
@@ -32,14 +33,14 @@
 
 			for (var i = 0 ; i < oldBlog.length ; i++) {
 				var b = oldBlog[i];
-				document.getElementById('showBlogText').innerHTML += "<div id='separateBlog'>" + "</div>" + "<div id='newPost'>" + "<b>" + b[1] + "</b>" + "<br>" + "<br>" + b[3] + "<br>" + "<br>" + "<form action='editblog.php?blogtext=" + b[2] + "&blogid=" + b[0] + "' method='post'>" + "<input type='submit' value='Edit'>" + "</form>" + "</div>" + "<br>" + "<div id='commentlink'>" + "<a href='commentsection.php?blogid=" + b[0] + "'>I want to place a comment" + "</a>" + "</div>";
+				document.getElementById('showBlogText').innerHTML += "<div id='separateBlog'>" + "</div>" + "<div id='newPost'>" + "<b>" + b[1] + "</b>" + "<br>" + "<br>" + b[3] + "<br>" + "<br>"  + "</div>" + "<br>" + "<div id='commentlink'>"  + "</div>";
 
 				for(var j = 0; j < returnComm.length; j++){ 
 
 					var k = returnComm[j];
 
 					if (k[2] == b[0]) {
-			   		document.getElementById("showBlogText").innerHTML +=  "<div id='newComm'>" + "<b>" + "Anomynous:" + "</b>" + " " + k[1]  + "<form action='delete-api.php?commentid=" + k[0] + "' method='post'>" + "<input type='submit' value='Delete'>" + "</form>" + "</div>" + "<br>";
+			   		document.getElementById("showBlogText").innerHTML +=  "<div id='newComm'>" + "<b>" + "Anomynous:" + "</b>" + " " + k[1]  + "</div>" + "<br>";
 					}
 		  		}
 		  	}
@@ -108,13 +109,13 @@
 				var b = returnblog[i];
 				if (blogcategories == b[2]) {
 
-					document.getElementById('showBlogText').innerHTML += "<div id='separateBlog'>" + "</div>" + "<div id='newPost'>" + "<b>" + b[1] + "</b>" + "<br>" + "<br>" + b[3] + "<br>" + "<br>" + "<form action='editblog.php?blogtext=" + b[2] + "&blogid=" + b[0] + "' method='post'>" + "<input type='submit' value='Edit'>" + "</form>" + "</div>" + "<br>" + "<div id='commentlink'>" + "<a href='commentsection.php?blogid=" + b[0] + "'>I want to place a comment" + "</a>" + "</div>";		   			
+					document.getElementById('showBlogText').innerHTML += "<div id='separateBlog'>" + "</div>" + "<div id='newPost'>" + "<b>" + b[1] + "</b>" + "<br>" + "<br>" + b[3] + "<br>" + "<br>"  + "</div>" + "<br>" + "<div id='commentlink'>"  + "</div>";		   			
 		   			for(var j = 0; j < returnComm.length; j++){ // loops through comments
 
 						var k = returnComm[j];
 
 						if (k[2] == b[0]) {
-				   			document.getElementById("showBlogText").innerHTML += "<div id='newComm'>" + "Anomynous:" + " " + k[1]  + "<form action='delete-api.php?commentid=" + k[0] + "' method='post'>" + "<input type='submit' value='Delete'>" + "</form>" + "</div>" + "<br />";
+				   			document.getElementById("showBlogText").innerHTML += "<div id='newComm'>" + "<b>" + "Anomynous:" + "</b>" + " " + k[1]  + "</div>" + "<br>";
 						}
 			  		}
 	   			}
@@ -123,14 +124,14 @@
 			if (blogcategories = "all") {
 				for (var i = 0 ; i < oldBlog.length ; i++) {
 					var b = oldBlog[i];
-					document.getElementById('showBlogText').innerHTML += "<div id='separateBlog'>" + "</div>" + "<div id='newPost'>" + "<b>" + b[1] + "</b>" + "<br>" + "<br>" + b[3] + "<br>" + "<br>" + "<form action='editblog.php?blogtext=" + b[2] + "&blogid=" + b[0] + "' method='post'>" + "<input type='submit' value='Edit'>" + "</form>" + "</div>" + "<br>" + "<div id='commentlink'>" + "<a href='commentsection.php?blogid=" + b[0] + "'>I want to place a comment" + "</a>" + "</div>";
+					document.getElementById('showBlogText').innerHTML += "<div id='separateBlog'>" + "</div>" + "<div id='newPost'>" + "<b>" + b[1] + "</b>" + "<br>" + "<br>" + b[3] + "<br>" + "<br>"  + "</div>" + "<br>" + "<div id='commentlink'>"  + "</div>";
 
 					for(var j = 0; j < returnComm.length; j++){ 
 
 						var k = returnComm[j];
 
 						if (k[2] == b[0]) {
-				   		document.getElementById("showBlogText").innerHTML +=  "<div id='newComm'>" + "<b>" + "Anomynous:" + "</b>" + " " + k[1]  + "<form action='delete-api.php?commentid=" + k[0] + "' method='post'>" + "<input type='submit' value='Delete'>" + "</form>" + "</div>" + "<br>";
+				   		document.getElementById("showBlogText").innerHTML +=  "<div id='newComm'>" + "<b>" + "Anomynous:" + "</b>" + " " + k[1]  + "</div>" + "<br>";
 						}
 			  		}
 				}

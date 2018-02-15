@@ -9,6 +9,7 @@
 	<body>
 
 		<h1>Leave a comment:</h1>
+		
 		<form action="comment.php" method="post">
 			<textarea name="comment" id="commentBody" placeholder="Leave a comment"></textarea>
 			<input type="hidden" name="blogid" value="
