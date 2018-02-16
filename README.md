@@ -1,39 +1,7 @@
 # Blog-website
 Exercise - Create a blogwebsite. 
 
-# Version 2 (14-2-2018) (this readme is about version 2, see version 2 map)
-- IMPORTANT: blogs load only after refreshing of the webpage
-
-# !! SHORTCUTS
-The owner (blogger) can type in shortcuts. As of now they are the following:
-- cg : CodeGorilla,
-- gn : Groningen,
-- www : world wide web
-
-# Changelog
-- Seperated pages for visitors & owner
-- Titles are shown above blogtext 
-- Removed features from visitors webpage
-- Categories are logged into database
-- databases are normalised (linked)
-- Blogtext is now limited too div
-- Comments from visitor POST into database
-- ! Can select multiple categories for blogs
-- Shortcuts for blogger (when typing)
-- Select blogs from selected categories
-- Style changes for blogs (title etc.)
-- show comments
-- delete comments
-- select categories
-- cleaned up the code
-- added search function
-- added edit function for blogstexts
-
-# Upcoming changes
-- login for owner (into backend) underway
-- styling changes
-- cleaning code
-- usabillity changes
+# IMPORTANT: this is the old blog website, the most recent one is located in the map "version 2"
 
 # Live demo (outdated)
 - Live demo Visitor: http://wijzijncodegorilla.nl/eelkevandijk/yeOldBlog/visitor/blog.php
