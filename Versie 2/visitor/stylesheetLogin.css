@@ -14,7 +14,7 @@ body {
 	
 }
 
-#loginConfirm, #regConfirm, #cancelReg {
+#loginConfirm, #regConfirm, #cancelReg, #cancelReset {
 	margin-top: 7px;
 	background-color: white;
 	padding: 5px;
@@ -34,7 +34,7 @@ body {
 	font-size: 90%;
 }
 
-#userName, #password, #regUsername, #regPassword, #regEmail{
+#userName, #password, #regUsername, #regPassword, #regEmail, #resetEmail{
 	font-family: Courier;
 	margin-top: 5px;
 }

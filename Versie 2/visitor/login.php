@@ -40,9 +40,9 @@
 						<h3>PlEASE FILL IN YOUR EMAIL, YOUR A LINK TO RESET YOUR PASSWORD WILL BE SEND THERE</h3>
 						<form action="reset_user_password.php" method="post">
 							<label>Email :</label>
-							<input id="regEmail"  type="text"  name="email" placeholder="email"> <br />
+							<input id="resetEmail"  type="text"  name="email" placeholder="email"> <br />
 							<input type="submit" id="submitMail" onclick="forgotPassword()">
-							<input type="cancel" id="cancelReg" onclick="window.location.href = 'login.php'" value="Cancel">
+							<input type="cancel" id="cancelReset" onclick="window.location.href = 'login.php'" value="Cancel">
 						</form>
 					</div>
 
