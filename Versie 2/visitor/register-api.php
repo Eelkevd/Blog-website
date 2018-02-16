@@ -12,6 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $connection = new PDO($dsn, $user_name, $pass_word);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    $username = stripslashes($username);
+    $password = stripslashes($password);
+
 	try {
 
         $sql = "INSERT INTO registervisitor (username, password, email) VALUES ('$username', '$newPassword', '$email')";

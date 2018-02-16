@@ -52,6 +52,6 @@ body {
 	margin-bottom: 30px;
 }
 
-#regNew{
+#regNew, #formForgotP{
 	display: none;
 }

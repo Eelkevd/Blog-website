@@ -31,6 +31,18 @@
 							<label>Password :</label>
 							<input id="password"  type="password"  name="password" placeholder="**********"> <br />
 							<input name='submit' id="loginConfirm" align="center" type="submit" value="Login">
+							
+						</form>
+						<input type="submit" id="forgotPassword" onclick="forgotPassword()" value="Forgot my password">
+					</div>
+
+					<div id="formForgotP">
+						<h3>PlEASE FILL IN YOUR EMAIL, YOUR A LINK TO RESET YOUR PASSWORD WILL BE SEND THERE</h3>
+						<form action="reset_user_password.php" method="post">
+							<label>Email :</label>
+							<input id="regEmail"  type="text"  name="email" placeholder="email"> <br />
+							<input type="submit" id="submitMail" onclick="forgotPassword()">
+							<input type="cancel" id="cancelReg" onclick="window.location.href = 'login.php'" value="Cancel">
 						</form>
 					</div>
 
@@ -66,7 +78,14 @@ $(document).ready(function(){ //keypress function, when enter is pressed; button
 // page display
 function loadRegister(){ // displays de blogform page and closes the blog overview page
 	document.getElementById("loginKnownUser").style.display = "none";
+	document.getElementById("formForgotP").style.display = "none";
 	document.getElementById("regNew").style.display = "block";
+}
+
+function forgotPassword(){
+	document.getElementById("loginKnownUser").style.display = "none";
+	document.getElementById("formForgotP").style.display = "block";
+	document.getElementById("regNew").style.display = "none";
 }
 
 </script>
