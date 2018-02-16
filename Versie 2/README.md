@@ -1,50 +1,45 @@
 # Blog-website
-Exercise - Create a blogwebsite. 
+Exercise - Create a blogwebsite. Version 2 contains week 4 and 5.
 
-# Version 2 (14-2-2018) (this readme is about version 2, see version 2 map)
+# Version 2 (16-2-2018)
 - IMPORTANT: blogs load only after refreshing of the webpage
+- IMPORTANT: mail server doesnt work probaly with live demo. On localhost "Mailtrap" works, but it keeps emails to itself (not viable).
 
-# !! SHORTCUTS
+# !! SHORTCUTS for blogger
 The owner (blogger) can type in shortcuts. As of now they are the following:
 - cg : CodeGorilla,
 - gn : Groningen,
 - www : world wide web
 
 # Changelog
-- Seperated pages for visitors & owner
-- Titles are shown above blogtext 
-- Removed features from visitors webpage
-- Categories are logged into database
-- databases are normalised (linked)
-- Blogtext is now limited too div
-- Comments from visitor POST into database
-- ! Can select multiple categories for blogs
-- Shortcuts for blogger (when typing)
-- Select blogs from selected categories
-- Style changes for blogs (title etc.)
-- show comments
-- delete comments
-- select categories
-- cleaned up the code
 - added search function
-- added edit function for blogstexts
+- added login function for admin
+- added login for users
+- users can only place comments when they have a account
+- passwords are incrypted when submitted to the database, and decrypted when a user wants to log in
+- some protection for query injection
+- lots of usabillity improvements
+- users can still visit without login in, but they can't place comments
+- blogger can edit his/her blogs.
+- login is now (more) protected by sessions
+- users can log out
 
 # Upcoming changes
-- login for owner (into backend) underway
 - styling changes
 - cleaning code
 - usabillity changes
+- mailing via DirectAdmin, doesnt work now somehow
 
-# Live demo (outdated)
-- Live demo Visitor: http://wijzijncodegorilla.nl/eelkevandijk/yeOldBlog/visitor/blog.php
-- Live demo Owner: http://wijzijncodegorilla.nl/eelkevandijk/yeOldBlog/owner/blog.php
+# Live demo
+- Live demo Visitor: http://www.wijzijncodegorilla.nl/eelkevandijk/YeOldBlog_2/visitor/login.php (you can create your own account and log in)
+- Live demo Owner: http://www.wijzijncodegorilla.nl/eelkevandijk/YeOldBlog_2/owner/login.php (username: admin, password: admin)
 
 # SCRUM
 https://trello.com/b/3fzu0kCA/blog-website
 
 # For next time;
 - order files (css in css map, php's in php map)
-- better naming of database tables an
+- better naming of databases, tables and columns
 
 # Swagger 
 https://app.swaggerhub.com/apis/Eelke-Codegorilla/API-Eelke-4.0/1.0.0
