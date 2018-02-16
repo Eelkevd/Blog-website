@@ -17,7 +17,7 @@
 			<div id="positionC">
 				<div align="center" id="loginWrap">
 
-					<h3 id="header3">Welcome! Login or just pay a visit</h3>
+					<h3 id="header3">Welcome! Login or just pay us a visit</h3>
 					<div id="btnGrp" align="center">
 						<div id="btnBlogInput" onclick="loadRegister()">Register</div>
 						<div id="btnShowBlog" onclick="window.location.href = 'blogvisitor.php'">I'm just visiting</div>

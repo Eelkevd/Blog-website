@@ -115,7 +115,7 @@ a:hover, a:active {
 	border-top: 1px solid ;
 }
 
-#btnGotoLogin, #btnShowBlog {
+#btnLogout, #btnShowBlog, #btnGotoLogin {
 	text-align: center;
 	background-color: #463d3d;
 	padding: 5px;

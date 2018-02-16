@@ -8,7 +8,7 @@
 	<head>
 		<title>The Big Blog</title>
 		<link rel="stylesheet" type="text/css" href="stylesheetBlog.css">
-		<script src="scripts.js"></script>
+		<script src="scriptsreg.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</head>
 
@@ -17,8 +17,8 @@
 		<p id="welcomeUser" align="center">Welcome: <?php echo $login_session; ?></p>
 
 		<div id="btnGrp" align="center">
-			<div id="btnBlogInput" onclick="loadBlogForm()">write blog</div>
 			<div id="btnShowBlog" onclick="getOldBlog()">show blogs</div>
+			<div id="btnLogout" onclick="window.location.href = 'logout.php'">log out</div>
 		</div>
 
 		<div class="contentElement">
